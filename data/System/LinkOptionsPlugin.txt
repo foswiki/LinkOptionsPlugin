@@ -19,7 +19,7 @@ Some new options and CSS sets can be used simultaneously, separated by a pipe (|
 |  ==Title==  |  %GREEN%Text%ENDCOLOR%  | A text to be a hint for the link |
 |  ==Class==  |  %GREEN%Name%ENDCOLOR%  | The name of a class (to define CSS style) |
 |  ==ID==  |  %GREEN%Name%ENDCOLOR%  | This %GREEN%Name%ENDCOLOR% must be unique on the web page |
-|  ==Skin==  |  %GREEN%<nop>SkinName%ENDCOLOR%  | %GREEN%SkinName%ENDCOLOR% must be a valid TWiki skin |
+|  ==Skin==  |  %GREEN%<nop>SkinName%ENDCOLOR%  | %GREEN%SkinName%ENDCOLOR% must be a valid Foswiki skin |
 |  ==CSS==  |  %GREEN%CSS Code%ENDCOLOR%  | %GREEN%CSS Code%ENDCOLOR% is any CSS formatatin code. You can repeat this option <p/> ==color== is a CSS properti, and you can put values like =%GREEN%#00A0F0%ENDCOLOR%= or =%GREEN%red%ENDCOLOR%=. See more colors in %SYSTEMWEB%.StandardColors. You can use any CSS properti (valid for links) hire. See more in the [[http://www.w3.org/TR/REC-CSS2/cover.html#minitoc][CSS2 Specification in the W3C Web Site]]. |
 The option names are case insensitive for LinkOptionsPlugin or CSS, but the W3C defines the CSS properties in lower case and it is important to validade. Write the LinkOptionsPlugin optins as  you prefer.
 
@@ -41,12 +41,12 @@ Opening in a new window (with options):
 	* *Code:* =[<nop>[%SYSTEMWEB%.Macros][See the Macros][NewWin:600x500|Name:winMacros|Skin:plain]]=
 	* *Expand to:* <a href="%SCRIPTURL%/view%SCRIPTSUFFIX%/%SYSTEMWEB%/Macros?skin=plain" target="winMacros"\
  onclick="open('%SCRIPTURL%/view%SCRIPTSUFFIX%/%SYSTEMWEB%/Macros?skin=plain',\
- 'winMacros', 'titlebar=0,width=600,height=500,resizable,scrollbars'); return false;">See the TWiki Variables</a>
+ 'winMacros', 'titlebar=0,width=600,height=500,resizable,scrollbars'); return false;">See the Macros</a>
 		* *If installed:* [[%SYSTEMWEB%.Macros][See the Macros][NewWin:600x500|Name:winMacros|Skin:plain]]
 
 Crazy CSS use:
 	* *Code:* =[<nop>[<nop>WebHome][Crazy Link!][color:green|background-color:#FFF0A0|border:3px dotted #FFC030|text-decoration:none|letter-spacing:10px|padding:4px|font-size:15px|font-weight:900]]=
-	* *Expand to:* <a  style="color:green; background-color:#FFF0A0; border:3px dotted #FFC030; text-decoration:none; letter-spacing:10px; padding:4px; font-size:15px; font-weight:900; " class="twikiLink" href="/twiki/bin/view/TWiki/WebHome">Crazy Link!</a>
+	* *Expand to:* <a  style="color:green; background-color:#FFF0A0; border:3px dotted #FFC030; text-decoration:none; letter-spacing:10px; padding:4px; font-size:15px; font-weight:900; " class="foswikiLink" href="/foswiki/bin/view/System/WebHome">Crazy Link!</a>
 		* *If installed:* [[WebHome][Crazy Link!][color:green|background-color:#FFF0A0|border:3px dotted #FFC030|text-decoration:none|letter-spacing:10px|padding:4px|font-size:15px|font-weight:900]]
 
 
@@ -60,35 +60,32 @@ Plugin settings are stored as preferences variables. To reference a plugin setti
 	* Set DEBUG to 1 to get debug messages in data/debug.txt. Default: 0
 		* Set DEBUG = 0
 
----++ Plugin Installation Instructions
+---++ Installation Instructions
 
-__Note:__ You do not need to install anything on the browser to use this plugin. The following instructions are for the administrator who installs the plugin on the server where TWiki is running. 
+%$INSTALL_INSTRUCTIONS%
 
-	* Download the ZIP file from the Plugin web (see below)
-	* Unzip ==%TOPIC%.zip== in your twiki installation directory. Content:
-     | *File:* | *Description:* |
-     | ==data/System/%TOPIC%.txt== | Plugin topic |
-     | ==data/System/%TOPIC%.txt,v== | Plugin topic repository |
-     | ==lib/Foswiki/Plugins/%TOPIC%.pm== | Plugin Perl module |
-	* Dakar: Visit =configure= in your TWiki installation, and enable the plugin in the {Plugins} section.
-	* Test if the installation was successful.
-     you should see rendered dates on the [[#Examples][example session]].
+---++ Plugin Files
+
+   | *File:* | *Description:* |
+%$MANIFEST%
+
 
 ---++ Plugin Info
 
-|  Plugin Author: | TWiki:Main.AurelioAHeckert |
-|  Plugin Version: | 27 Jul 2006 (v1.001) |
+|  Plugin Author: | Foswiki:Main.ItaloValcy |
+|  Previous Author: | Foswiki:Main.AurelioAHeckert |
+|  Copyright: | &copy; 2009, Italo Valcy, &copy; 2005-2006, Aurelio A. Heckert |
+|  Version: | %$VERSION% |
 |  Change History: | <!-- versions below in reverse order -->&nbsp; |
+|  21 Jul 2009 | Foswiki:Main.ItaloValcy: Porting to Foswiki (closes Foswikitask:Item1916) |
 |  27 Jul 2006 | (v1.001) - TWiki:Main.AntonioTerceiro: Dakar compatibility |
 |  29 Mar 2005 | Initial version |
-|  TWiki Dependency: | $TWiki::Plugins::VERSION 1.024 |
+|  Foswiki Dependency: | $Foswiki::Plugins::VERSION 1.024 |
 |  CPAN Dependencies: | none |
 |  Other Dependencies: | none |
 |  Perl Version: | 5.005 |
 |  License: | GPL ([[http://www.gnu.org/copyleft/gpl.html][GNU General Public License]]) |
 |  Plugin Home: | http://foswiki.org/Extensions/%TOPIC% |
-|  Feedback: | http://foswiki.org/Extensions/%TOPIC%Dev |
+|  Support: | http://foswiki.org/Support/%TOPIC% |
 
 __Related Topics:__ %SYSTEMWEB%.DefaultPreferences, %USERSWEB%.SitePreferences, [[%SYSTEMWEB%.Plugins][Plugins]]
-
--- TWiki:Main.AurelioAHeckert - 29 Mar 2005
